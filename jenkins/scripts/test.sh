@@ -1,5 +1,12 @@
-#!/usr/bin/env sh
+#!/usr/bin/env nodejs
+var http = require('http');
+http.createServer(function (req, res) {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Hello World\n');
+}).listen(3000, 'localhost');
+console.log('Server running at http://localhost:3000/');
 
+#!/usr/bin/env sh
 echo 'The following "npm" command (if executed) installs the "cross-env"'
 echo 'dependency into the local "node_modules" directory, which will ultimately'
 echo 'be stored in the Jenkins home directory. As described in'
